@@ -38,6 +38,8 @@ public class Employee implements Serializable {
     //@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime updateTime;
 
+    //获取动态id
+
     private Long createUser;
 
     private Long updateUser;
