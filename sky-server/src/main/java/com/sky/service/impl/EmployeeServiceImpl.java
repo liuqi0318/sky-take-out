@@ -101,5 +101,19 @@ public class EmployeeServiceImpl implements EmployeeService {
         PageResult.setRecords(page.getResult());
         return PageResult;
     }
+    //启用禁用员工账号
+
+    @Override
+    public void startOrStop(Integer status, Long id) {
+//        Employee employee = new Employee();//用实体对象动态的赋值
+//        employee.setStatus(status);
+//        employee.setId(id);
+        //由于在实体类上加了注解@Builder 所以不需要创建实体类对象
+        Employee employee = Employee.builder()
+                .status(status)
+                .id(id)
+                .build();
+        employeeMapper.update(employee);
+    }
 
 }
